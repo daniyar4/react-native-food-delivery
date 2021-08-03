@@ -142,12 +142,12 @@ catch(err) {
   }}
 
 
-  export const getItems = () => {
+  export const getItems = (categoryId) => {
     return async (dispatch, getState) => {
       try {
   
         const response = await fetch(
-          `https://react-native-app-e1089-default-rtdb.firebaseio.com/category/-Mf3kBsXMAcAPUMybx47/items.json`
+          `https://react-native-app-e1089-default-rtdb.firebaseio.com/category/${categoryId}/items.json`
         )
   
         if(!response.status){

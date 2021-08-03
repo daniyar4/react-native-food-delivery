@@ -11,11 +11,12 @@ import CustomHeaderButton from '../Components/HeaderButton';
 const CategoryScreen = props => {
     const items = useSelector(state => state.items)
     const dispatch = useDispatch();
-
+    
+    const categoryId = props.navigation.state.params.categoryId
 
     const loadItems = useCallback(async () => {
       try {
-          await dispatch (getItems())
+          await dispatch (getItems(categoryId))
       } catch(err){
           console.log(err)
       }
